@@ -1,0 +1,31 @@
+﻿<Window x:Class="Telegram.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Telegram"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Grid.Column="0"  FontFamily="Comic Sans Ms" Content="Telegram" FontSize="30" Background="LightBlue" HorizontalContentAlignment="Center"></Label>
+        <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Background="LightBlue"  FontSize="30" FontFamily="Comic Sans Ms"></Label>
+        <ListBox Grid.Row="1" Grid.RowSpan="2" Name="contacts" ItemsSource="{Binding People}">
+            <Label Content="{Binding Name}"></Label>
+        </ListBox>
+        <ListBox Name="botsent" Grid.Row="1" Grid.Column="1" FontSize="20"></ListBox>
+        <TextBox Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Name="text" FontSize="20"></TextBox>
+        <ListBox Name="isent" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" HorizontalContentAlignment="Right" FontSize="20"></ListBox>
+        <Button x:Name="send" Content="Send" Grid.Column="3" Grid.Row="2" Background="LightBlue" Click="send_Click" FontSize="20"></Button>
+    </Grid>
+</Window>
